@@ -1,21 +1,36 @@
-==================================================
-astepper lib
-==================================================
-= Copyright (c) Davide Gironi, 2014              =
-= http://davidegironi.blogspot.it/               =
-==================================================
+==============================================================================================================================================
+The code at present has been put together by referencing various sources of information
+such as:
 
-
-This library drive up to stepper motor using the Allegro driver like the
-A3967 (EasyDriver) on ATmega8.
-It uses the CTC mode of TIMER2, changing OCR2 register results in the
-change of the interrupt frequency.
-
-Devel Notes
------------
-This library was developed on Eclipse, built with avr-gcc on Atmega8 @ 8MHz.
-
-
-License
--------
-Please refer to LICENSE file for licensing information.
+  AVR446 - Linear speed control of stepper motor Documentation
+  Atmel AVR Application Note;
+  
+  Bresenham type fast algorithm for 3−D linear and helical movement in CNC machines
+  Muhammad Saad Saleem Research Assistant ∗K.I.C.S., U.E.T., Lahore saad@khwarzimic.org
+  Prof. Dr. Mian Muhammad Saleem Department of Electrical Engineering U.E.T., Lahore drmsaleem@hotmail.com
+  March 10, 2004;
+  
+  XY INTERPOLATION ALGORITHMS [Kenneth and Melvin Goldberg 3913 Pine Street, Apt. F Philadelphia, Pennsylvania 19104]
+  
+  Improved Algorithm for the Circular Interpolation Time Division 
+  Method in CNC System 
+  Xudong Yao, Xiuting Zhao 
+  Luoyang Institute of Science and Technology, Luoyang, 471023, china 
+  cnyxdp@163.com ,  zhaoxiuting211@163.com;
+  
+  Theory and Design of CNC Systems by Suk-Hwan Suh • Seong-Kyoon Kang Dae-Hyuk Chung • Ian Stroud
+  
+  These references are excellent studies with respect to this CNC project.
+ ============================================================================================================================================= 
+ 
+  I have started this project to gain a deeper understanding of the maths and sequences around the control af multi axis
+  motion, the project uses a Clicker2 MZ from MikroElectronika which has the pic32mz2048efh100 chip on it.
+  
+  The axis control uses OCx output compare modules in dual single pulse mode as core independant pin, which should free up 
+  further resources once the timers are clocking to drive the pulses. 
+  
+  Communication is vial serial and DMA is activated, this needs implimenting properly once all the interpolators have been taken care of.
+  
+  
+  
+  

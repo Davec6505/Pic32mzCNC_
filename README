@@ -20,16 +20,26 @@ such as:
   
   Theory and Design of CNC Systems by Suk-Hwan Suh • Seong-Kyoon Kang Dae-Hyuk Chung • Ian Stroud
   
+  GRBL firmware has been referenced as a learning and sample implimentation source;
+  
   These references are excellent studies with respect to this CNC project.
  ============================================================================================================================================= 
  
   I have started this project to gain a deeper understanding of the maths and sequences around the control af multi axis
   motion, the project uses a Clicker2 MZ from MikroElectronika which has the pic32mz2048efh100 chip on it.
   
-  The axis control uses OCx output compare modules in dual single pulse mode as core independant pin, which should free up 
+  The chip is clocked at 200mhz and the code impliments all the phrihial colkc modes for the various bus frequencies. my intention
+  is to finnish the interpolation Algorythims and movr onto implimenting a floating point library using the chips builtin fp functionality, to quicken the 
+  math process. 
+  
+  It uses my implimentation of a i2c lcd library available on my github account although i may ditch this as I will develop aroung Universal gcode sender.
+  
+  The axis control uses OCx output compare modules in dual single pulse mode as core independant pin, to free up 
   further resources once the timers are clocking to drive the pulses. 
   
-  Communication is vial serial and DMA is activated, this needs implimenting properly once all the interpolators have been taken care of.
+  Communication is via serial and DMA is activated, this needs implimenting properly once all the interpolators have been taken care of.
+  
+  The code is in its early phase of development, and i invite anyone using MikroC Pro for Pic32 to contribute.
   
   
   
